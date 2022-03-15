@@ -1,0 +1,30 @@
+version: '3'
+services:
+    php: #primeiro serviço
+        build: . #ao declarar essa linha, deve-se criar um arquivo dockerfile, porém caso ja exista na maquina um projeto com um dockerfile usando a mesma imagem não é necessário declarar essa linha, porem deve-se especificar a image a ser utilizada 
+        container_name: sistema_controle_licencas #declarando o nome do container
+        ports:
+            - "8580:80" #espelhando a porta 8080 da minha maquina na porta 80 do servidor do container
+        volumes: # ao declarar um volume, mesmo que mate o container ainda irei ter meus dados localmente
+            - ./:/var/www/html # nessa linha primeiro declaro ./(ponto e barra) para acessar a pasta raiz desse container na minha maquina. Depois acesso o caminho :/var/www/html para compartilhar meus arquivos locais com o container
+        networks: #declarando uma rede padão
+            - default
+
+    db: #segundo serviço
+        image: mysql:5.7
+        ports:
+            - "3306:3306" # DEFININDO QUE AS PORTAS LOCAL E NO CONTAINER SERÃO AS MESMAS
+        environment:
+            MYSQL_DATABASE: db_sistema_controle_licencas
+            MYSQL_USER: odenilson
+            MYSQL_PASSWORD: o1w2o3o4p5pw
+            MYSQL_ROOT_PASSWORD: o1w2o3o4p5rt
+        volumes:
+            - db_data:/var/lib/MYSQL_DATABASE
+        networks:
+            - default #declarando uma rede padão
+volumes:
+    db_data:
+    
+            
+
