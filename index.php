@@ -11,27 +11,12 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Logo</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <nav class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 3</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </nav>
+    <?php include_once 'header.php'?>
+    <a href="registerCompany.php">cadastro empresa</a><br><br>
+    <a href="registerLicense.php">cadastro licença</a>
+
+
+    <?php include_once 'footer.php'?>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
