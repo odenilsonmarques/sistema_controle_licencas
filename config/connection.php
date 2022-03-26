@@ -1,6 +1,6 @@
 <?php
 //esse host refere-se ao host disponivel para o docker no linux(para ver digitar o comando ifconfig)
- $dsn = "mysql:host=172.17.0.1; dbname=db_sistema_controle_licencas";
+ $dsn = "mysql:host=172.17.0.1; dbname=db_sistema_controle_licencas;charset=utf8";
  $dbuser = "root";
  $dbpass = "o1w2o3o4p5rt";
 try{
