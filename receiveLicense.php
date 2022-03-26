@@ -2,15 +2,15 @@
     include_once 'config/connection.php';
 
     $nameCompany = filter_input(INPUT_POST,'nameCompany');
-    $type_licensa = filter_input(INPUT_POST,'type_licensa');
+    $type_license = filter_input(INPUT_POST,'type_license');
     $expiration_date = filter_input(INPUT_POST,'expiration_date');
     $activity = filter_input(INPUT_POST,'activity');
     $organ = filter_input(INPUT_POST,'organ');
     
-    if($type_licensa && $expiration_date && $activity){
-        $insertLicense = $connectionPDO->prepare("INSERT INTO license(id_company, type_licensa, expiration_date, activity, organ)VALUES(:nameCompany, :type_licensa, :expiration_date, :activity, :organ)");
+    if($type_license && $expiration_date && $activity){
+        $insertLicense = $connectionPDO->prepare("INSERT INTO license(id_company, type_license, expiration_date, activity, organ)VALUES(:nameCompany, :type_license, :expiration_date, :activity, :organ)");
         $insertLicense->bindValue(':nameCompany',$nameCompany);
-        $insertLicense->bindValue(':type_licensa',$type_licensa);
+        $insertLicense->bindValue(':type_license',$type_license);
         $insertLicense->bindValue(':expiration_date',$expiration_date);
         $insertLicense->bindValue(':activity',$activity);
         $insertLicense->bindValue(':organ',$organ);

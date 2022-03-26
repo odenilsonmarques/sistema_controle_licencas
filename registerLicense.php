@@ -39,7 +39,7 @@ include_once 'config/connection.php';
                         <div class="row">
                             <div class="col-3">
                                 <label for="nameRepresentative" class="form-label mt-4">LICENÇA</label>
-                                <select name="type_licensa" id="type_licensa" class="form-select">
+                                <select name="type_license" id="type_license" class="form-select">
                                     <option value="">SELECIONE</option>                                         
                                     <option value="AUTORIZAÇÃO PARA CORTE DE ARVORE">AUTORIZAÇÃO PARA CORTE DE ARVORE</option> 
                                     <option value="AUTORIZAÇÃO PARA PODA DE ÁRVORE">AUTORIZAÇÃO PARA PODA DE ÁRVORE</option> 
