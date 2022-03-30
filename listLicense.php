@@ -26,6 +26,7 @@
                             </tr>
                         </thead>
                         <?php
+                           
                             $listLicenses = [];
                             $searchLicensesCompanys = $connectionPDO->query("SELECT company.id_company, company.nameCompany, license.id_license, license.type_license, license.expiration_date, license.activity, license.organ FROM license, company WHERE license.id_company = company.id_company");
                              if($searchLicensesCompanys->rowCount() > 0){
@@ -37,6 +38,17 @@
                                         <td><?=date('d/m/Y', strtotime($listLicense['expiration_date']));?></td>
                                         <td><?=$listLicense['activity'];?></td>
                                         <td><?=$listLicense['organ'];?></td>
+                                        <td>
+                                            <?php
+                                            $currentDate = date('d/m/Y');
+                                            $dateBase = date('d/m/Y', strtotime($listLicense['expiration_date']));
+                                            $days = $dateBase - $currentDate;
+                                            if($days > 0){
+                                                echo "Licença válida";
+                                            }else{
+                                                echo "Licença Inválida";
+                                            }
+                                        ?></td>
                                     </tr>
                                  <?php
                                  }
