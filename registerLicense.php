@@ -8,6 +8,7 @@ include_once 'config/connection.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Cadastro empresa</title>
 </head>
 <body>
@@ -15,10 +16,11 @@ include_once 'config/connection.php';
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <h3  class="mt-5">Cadastro de Licença</h3>
                     <form action="receiveLicense.php" method="POST">
-                        <div class="row">
+                        <div class="row mt-4 mb-3">
                             <div class="col-12">
-                                <label for="nameCompany" class="form-label mt-3">NOME DA EMPRESA</label>
+                                <label for="nameCompany" class="form-label mt-3">Empresa</label>
                                 <select name="nameCompany" id="nameCompany" class="form-select">
                                     <option value="">SELECIONE</option>
                                     <?php
@@ -36,9 +38,9 @@ include_once 'config/connection.php';
                                 </select>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mb-3">
                             <div class="col-3">
-                                <label for="nameRepresentative" class="form-label mt-4">LICENÇA</label>
+                                <label for="nameRepresentative" class="form-label mt-4">Licença</label>
                                 <select name="type_license" id="type_license" class="form-select">
                                     <option value="">SELECIONE</option>                                         
                                     <option value="AUTORIZAÇÃO PARA CORTE DE ARVORE">AUTORIZAÇÃO PARA CORTE DE ARVORE</option> 
@@ -57,15 +59,15 @@ include_once 'config/connection.php';
                                 </select>
                             </div>
                             <div class="col-3">
-                                <label for="expiration_date" class="form-label mt-4">DATA DE VALIDADE</label>
+                                <label for="expiration_date" class="form-label mt-4">Data de Validade</label>
                                 <input type="date" name="expiration_date" id="expiration_date" class="form-control" required>  
                             </div>
                             <div class="col-3">
-                                <label for="activity" class="form-label mt-4">ATIVIDADE</label>
+                                <label for="activity" class="form-label mt-4">Atividade</label>
                                 <input type="text" name="activity" id="activity" class="form-control" required>  
                             </div>
                             <div class="col-3">
-                                <label for="organ" class="form-label mt-4">ORGÃO / SECRETARIA</label>
+                                <label for="organ" class="form-label mt-4">Secretaria / Orgão</label>
                                 <input type="text" name="organ" id="organ" class="form-control" >  
                             </div>
                         </div>
