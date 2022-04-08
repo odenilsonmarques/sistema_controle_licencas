@@ -11,10 +11,13 @@
                         <a class="nav-link" href="index.php">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link 2</a>
+                        <a class="nav-link" href="listLicense.php">LICENÇAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link 3</a>
+                        <a class="nav-link" href="registerCompany.php">NOVA EMPRESA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registerLicense.php">NOVA LICENÇA</a>
                     </li>
                 </ul>
             </nav>

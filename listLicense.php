@@ -21,8 +21,10 @@
                                 <th>LICENÇA</th>
                                 <th>DATA DE VALIDADE</th>
                                 <th>ATIVIDADE</th>
-                               
                                 <th>STATUS</th>
+                                <th>DIAS</th>
+                               
+                                
                             </tr>
                         </thead>
                         <?php
@@ -35,19 +37,32 @@
                                         <td><?=$listLicense['nameCompany'];?></td>
                                         <td><?=$listLicense['type_license'];?></td>
                                         <td><?=date('d/m/Y', strtotime($listLicense['expiration_date']));?></td>
+                                        
                                         <td><?=$listLicense['activity'];?></td>
-                                        <!-- <td><?=$listLicense['organ'];?></td> -->
+                                       
+                                        
                                         <?php
                                             //capturando os dias de validade das licenças                                          
                                             $expirationDate= strtotime($listLicense['expiration_date']);
-                                            $days=ceil(($expirationDate-time())/60/60/24);
-                                            if($days <= 120){?>
-                                            <td style="background-color:#dc3545;color:#FFF;text-align:center;font-size:13px"><strong>PRAZO VENCIDO</strong></td>
+                                            $typeLicense = $listLicense['type_license'];
+                                            echo $days=ceil(($expirationDate-time())/60/60/24);
+                                            
+
+                                            if($days >= 30 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
+                                            <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
+                                            <?php }elseif($days > 1 && $days <= 30  && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
+                                                <td style="background-color:#ffc107;color:#FFF;text-align:center;font-size:13px"><strong>ATENÇÃO PRAZO</strong></td>
+                                            <?php }elseif($days < 1 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
+                                                <td style="background-color:#dc3545;color:#FFF;text-align:center;font-size:13px"><strong>PRAZO VENCIDO</strong></td>
+                                            <?php }elseif($days <= 120){ ?>
+                                                <td style="background-color:#dc3545;color:#FFF;text-align:center;font-size:13px"><strong>PRAZO VENCIDO</strong></td>
                                             <?php }elseif($days > 120 && $days <= 140 ){?>
                                                 <td style="background-color:#ffc107;color:#FFF;text-align:center;font-size:13px"><strong>ATENÇÃO PRAZO</strong></td>
-                                            <?php }elseif($days > 140){?>
+                                            <?php } elseif($days > 140 ){?>
                                                 <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
                                             <?php }?>
+
+                                            <td style="background-color:#212529;color:#FFF;text-align:center;font-size:13px" class="dark"><?= $days?></td> 
                                     </tr>
                                  <?php
                                  }
