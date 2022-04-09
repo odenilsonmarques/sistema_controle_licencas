@@ -16,31 +16,29 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="col-lg-6 text-center">
-                    <div class="card text-white bg-dark mb-3">
-                    
+                    <div class="card text-white mb-3" style="background-color:#4E9F3D">
+                        <div class="card-header" style="background-color:#1E5128"><strong>EMPRESAS</strong></div>
                         <div class="card-body">
-                            <h5 class="card-title">Empresas</h5>
                             <?php
                                 $seachCompanys = $connectionPDO->prepare("SELECT COUNT(id_company) as registers FROM company");
                                 $seachCompanys->execute();
                                 $rows = $seachCompanys->fetch(PDO::FETCH_ASSOC); 
                             ?>
-                                <p style="font-size:30px"><?php echo $rows['registers']; ?></p>
+                                <p style="font-size:30px"><strong><?php echo $rows['registers'];?></strong></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 text-center">
-                    <div class="card text-white bg-dark mb-3" >
-                        
+                    <div class="card text-white mb-3" style="background-color:#4E9F3D">
+                        <div class="card-header" style="background-color:#1E5128"><strong>LICENÇAS</strong></div>
                         <div class="card-body">
-                            <h5 class="card-title">Licenças</h5>
                             <?php
                                 $seachCompanys = $connectionPDO->prepare("SELECT COUNT(id_license) as registers FROM license");
                                 $seachCompanys->execute();
                                 $rows = $seachCompanys->fetch(PDO::FETCH_ASSOC); 
                             ?>
-                                <p style="font-size:30px"><?php echo $rows['registers']; ?></p>
+                                <p style="font-size:30px"><strong><?php echo $rows['registers'];?></strong></p>
                         </div>
                     </div>
                 </div>

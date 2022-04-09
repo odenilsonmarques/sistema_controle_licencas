@@ -12,19 +12,17 @@
     <?php include_once 'header.php'?>
         <div class="container">
             <div class="row">
-                <h3 class="mt-5">Licencas</h3>
+                
                 <div class="col-lg-12">
-                    <table class="table table-striped table-hover">
-                        <thead class="table-dark">
-                            <tr>
+                    <table class="table table-striped table-hover mt-5">
+                        <thead class="success">
+                            <tr >
                                 <th>EMPRESA</th>
                                 <th>LICENÇA</th>
                                 <th>DATA DE VALIDADE</th>
                                 <th>ATIVIDADE</th>
                                 <th>STATUS</th>
                                 <th>DIAS</th>
-                               
-                                
                             </tr>
                         </thead>
                         <?php
@@ -45,7 +43,7 @@
                                             //capturando os dias de validade das licenças                                          
                                             $expirationDate= strtotime($listLicense['expiration_date']);
                                             $typeLicense = $listLicense['type_license'];
-                                            echo $days=ceil(($expirationDate-time())/60/60/24);
+                                            $days=ceil(($expirationDate-time())/60/60/24);
                                             
 
                                             if($days >= 30 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
@@ -62,7 +60,7 @@
                                                 <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
                                             <?php }?>
 
-                                            <td style="background-color:#212529;color:#FFF;text-align:center;font-size:13px" class="dark"><?= $days?></td> 
+                                            <td style="background-color:#E6E6E6;color:#111;text-align:center;font-size:13px" class="dark"><?= $days?></td> 
                                     </tr>
                                  <?php
                                  }
