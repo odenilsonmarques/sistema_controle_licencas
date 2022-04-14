@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#064635">
         <div class="container">
             <a class="navbar-brand" href="index.php">CTRL - LICENÇAS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -8,7 +8,7 @@
             <nav class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">INICIO</a>
+                        <a class="nav-link" href="index.php">INÍCIO</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="listLicense.php">LICENÇAS</a>
@@ -19,6 +19,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="registerLicense.php">NOVA LICENÇA</a>
                     </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="pagination.php">paginacao</a>
+                    </li> -->
                 </ul>
             </nav>
         </div>
