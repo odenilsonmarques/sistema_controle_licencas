@@ -47,3 +47,11 @@ if($days >= 30 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){
                         echo "etset".$rows['registers'];
                     ?>
                 </div> -->
+
+
+                <div class="row">
+                <div class="col-lg-6">
+                <div class="col-lg-12">
+                </div>
+
+            </div>

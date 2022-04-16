@@ -41,16 +41,15 @@ body
     font-size:43px;
     font-weight:bolder;
 }
-
 footer p{
     color: #064635;
     font-weight:bolder;
 }
-
-
-
 label{
     font-size:16px;
     font-weight: bold;
-   
+}
+.btn-outline-primary{
+    background-color: #064635;
+    color: #fff;
 }

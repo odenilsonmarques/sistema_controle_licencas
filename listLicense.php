@@ -14,55 +14,115 @@
     <section>
         <div class="container">
             <div class="row mt-5">
+                <div class="col-lg-5">
+                    <form action="" method="POST">
+                        <div class="input-group mb-3">
+                            <input type="text" name="search" class="form-control" placeholder="Digite o tipo de licença">
+                            <button class="btn btn-primary" type="submit">BUSCAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-12">
-                    <table class="table table-striped table-hover mt-4">
-                        <thead class="success">
-                            <tr>
-                                <th>EMPRESA</th>
-                                <th>LICENÇA</th>
-                                <th>DATA DE VALIDADE</th>
-                                <th>ATIVIDADE</th>
-                                <th>STATUS</th>
-                                <th>DIAS</th>
-                            </tr>
-                        </thead>
-                        <?php
-                            $listLicenses = [];
-                            $searchLicensesCompanys = $connectionPDO->query("SELECT company.id_company, company.nameCompany, license.id_license, license.type_license, license.expiration_date, license.activity, license.organ FROM license, company  WHERE license.id_company = company.id_company");
-                            if($searchLicensesCompanys->rowCount() > 0){
-                                $listLicenses = $searchLicensesCompanys->fetchAll(PDO::FETCH_ASSOC);
-                                foreach($listLicenses as $listLicense){?>
-                                    <tr>
-                                        <td><?=$listLicense['nameCompany'];?></td>
-                                        <td><?=$listLicense['type_license'];?></td>
-                                        <td><?=date('d/m/Y', strtotime($listLicense['expiration_date']));?></td>
-                                        <td><?=$listLicense['activity'];?></td>
-                                        <?php
-                                            //capturando os dias de validade das licenças                                          
-                                            $expirationDate= strtotime($listLicense['expiration_date']);
-                                            $typeLicense = $listLicense['type_license'];
-                                            $days=ceil(($expirationDate-time())/60/60/24);
-                                            
-                                            if($days >= 30 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
-                                            <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
-                                            <?php }elseif($days > 1 && $days <= 30  && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
-                                                <td style="background-color:#ffc107;color:#FFF;text-align:center;font-size:13px"><strong>ATENÇÃO PRAZO</strong></td>
-                                            <?php }elseif($days < 1 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
-                                                <td style="background-color:#dc3545;color:#FFF;text-align:center;font-size:13px"><strong>PRAZO VENCIDO</strong></td>
-                                            <?php }elseif($days <= 120){ ?>
-                                                <td style="background-color:#dc3545;color:#FFF;text-align:center;font-size:13px"><strong>PRAZO VENCIDO</strong></td>
-                                            <?php }elseif($days > 120 && $days <= 140 ){?>
-                                                <td style="background-color:#ffc107;color:#FFF;text-align:center;font-size:13px"><strong>ATENÇÃO PRAZO</strong></td>
-                                            <?php } elseif($days > 140 ){?>
-                                                <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
-                                            <?php }?>
-                                            <td style="background-color:#E6E6E6;color:#111;text-align:center;font-size:13px" class="dark"><?= $days?></td> 
-                                    </tr>
-                                        <?php
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover mt-4">
+                            <thead class="success">
+                                <tr>
+                                    <th>EMPRESA</th>
+                                    <th>LICENÇA</th>
+                                    <th>DATA DE VALIDADE</th>
+                                    <th>ATIVIDADE</th>
+                                    <th>STATUS</th>
+                                    <th>DIAS</th>
+                                </tr>
+                            </thead>
+                            <?php
+                                $listLicenses = [];
+                                if(!isset($_POST['search'])){
+
+                                    $searchLicensesCompanys = $connectionPDO->query("SELECT company.id_company, company.nameCompany, license.id_license, license.type_license, license.expiration_date, license.activity, license.organ FROM license, company  WHERE license.id_company = company.id_company");
+                                    if($searchLicensesCompanys->rowCount() > 0){
+                                        $listLicenses = $searchLicensesCompanys->fetchAll(PDO::FETCH_ASSOC);
+                                        foreach($listLicenses as $listLicense){?>
+                                            <tr>
+                                                <td><?=$listLicense['nameCompany'];?></td>
+                                                <td><?=$listLicense['type_license'];?></td>
+                                                <td><?=date('d/m/Y', strtotime($listLicense['expiration_date']));?></td>
+                                                <td><?=$listLicense['activity'];?></td>
+                                                <?php
+                                                    //capturando os dias de validade das licenças                                          
+                                                    $expirationDate= strtotime($listLicense['expiration_date']);
+                                                    $typeLicense = $listLicense['type_license'];
+                                                    $days=ceil(($expirationDate-time())/60/60/24);
+                                                    
+                                                    if($days >= 30 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
+                                                    <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
+                                                    <?php }elseif($days > 1 && $days <= 30  && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
+                                                        <td style="background-color:#ffc107;color:#FFF;text-align:center;font-size:13px"><strong>ATENÇÃO PRAZO</strong></td>
+                                                    <?php }elseif($days < 1 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
+                                                        <td style="background-color:#dc3545;color:#FFF;text-align:center;font-size:13px"><strong>PRAZO VENCIDO</strong></td>
+                                                    <?php }elseif($days <= 120){ ?>
+                                                        <td style="background-color:#dc3545;color:#FFF;text-align:center;font-size:13px"><strong>PRAZO VENCIDO</strong></td>
+                                                    <?php }elseif($days > 120 && $days <= 140 ){?>
+                                                        <td style="background-color:#ffc107;color:#FFF;text-align:center;font-size:13px"><strong>ATENÇÃO PRAZO</strong></td>
+                                                    <?php } elseif($days > 140 ){?>
+                                                        <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
+                                                    <?php }?>
+                                                    <td style="background-color:#E6E6E6;color:#111;text-align:center;font-size:13px" class="dark"><?= $days?></td> 
+                                            </tr>
+                                                <?php
+                                        }
+                                    }
+
+                                }else if(isset($_POST['search'])){
+                                    //buscando todas as palavras que iniciam com a letra passado na busca. Também foi utilizado a função trim para retirar todos os espeços no inicio e no fim da string
+                                    $type_license = trim($_POST['search'])."%";
+                                    $searchLicensesCompanys = $connectionPDO->prepare("SELECT company.id_company, company.nameCompany, license.id_license, license.type_license, license.expiration_date, license.activity, license.organ FROM license, company WHERE (type_license LIKE '$type_license') AND license.id_company = company.id_company");
+                                    $searchLicensesCompanys->bindParam(':type_license', $type_license, PDO::PARAM_STR);
+                                    $searchLicensesCompanys->execute();
+                                    if($searchLicensesCompanys->rowCount()>0){
+                                        $listLicenses = $searchLicensesCompanys->fetchAll(PDO::FETCH_ASSOC);
+                                        foreach($listLicenses as $listLicense){?>
+                                            <tr>
+                                                <td><?=$listLicense['nameCompany'];?></td>
+                                                <td><?=$listLicense['type_license'];?></td>
+                                                <td><?=date('d/m/Y', strtotime($listLicense['expiration_date']));?></td>
+                                                <td><?=$listLicense['activity'];?></td>
+                                                <?php
+                                                    //capturando os dias de validade das licenças                                          
+                                                    $expirationDate= strtotime($listLicense['expiration_date']);
+                                                    $typeLicense = $listLicense['type_license'];
+                                                    $days=ceil(($expirationDate-time())/60/60/24);
+                                                    
+                                                    if($days >= 30 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
+                                                    <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
+                                                    <?php }elseif($days > 1 && $days <= 30  && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
+                                                        <td style="background-color:#ffc107;color:#FFF;text-align:center;font-size:13px"><strong>ATENÇÃO PRAZO</strong></td>
+                                                    <?php }elseif($days < 1 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
+                                                        <td style="background-color:#dc3545;color:#FFF;text-align:center;font-size:13px"><strong>PRAZO VENCIDO</strong></td>
+                                                    <?php }elseif($days <= 120){ ?>
+                                                        <td style="background-color:#dc3545;color:#FFF;text-align:center;font-size:13px"><strong>PRAZO VENCIDO</strong></td>
+                                                    <?php }elseif($days > 120 && $days <= 140 ){?>
+                                                        <td style="background-color:#ffc107;color:#FFF;text-align:center;font-size:13px"><strong>ATENÇÃO PRAZO</strong></td>
+                                                    <?php } elseif($days > 140 ){?>
+                                                        <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
+                                                    <?php }?>
+                                                    <td style="background-color:#E6E6E6;color:#111;text-align:center;font-size:13px" class="dark"><?= $days?></td> 
+                                            </tr>
+                                                <?php
+                                        }
+
+                                    }else{ ?>
+                                        <div class="alert alert-danger text-center" role="alert">
+                                            Nenhum Resultado Encontrado !
+                                        </div>
+                                <?php  }
+                                    
                                 }
-                            }
-                        ?>
-                    </table>
+                            ?>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
