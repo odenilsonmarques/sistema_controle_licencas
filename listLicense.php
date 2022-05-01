@@ -90,7 +90,10 @@
                                                         <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
                                                     <?php }?>
                                                     <td style="background-color:#E6E6E6;color:#111;text-align:center;font-size:13px" class="dark"><?= $days?></td> 
-                                                    <td style="background-color:#0d6efd;color:#FFF;text-align:center;font-size:13px"><a href="editLicense.php?id_license=<?=$listLicense['id_license'];?>"  class="btn btn-sm btn-primary">Editar</a></td>
+                                                    <td style="background-color:#0d6efd;color:#FFF;text-align:center;font-size:13px">
+                                                        <a href="editLicense.php?id_license=<?=$listLicense['id_license'];?>"  class="btn btn-sm btn-primary">Editar</a>
+                                                        <a href="detailsLicense.php?id_license=<?=$listLicense['id_license'];?>"  class="btn btn-sm btn-primary" title="ver detalhes">+</a>
+                                                    </td>
                                             </tr>
                                                 <?php 
                                                
@@ -131,7 +134,10 @@
                                                         <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
                                                     <?php }?>
                                                     <td style="background-color:#E6E6E6;color:#111;text-align:center;font-size:13px" class="dark"><?= $days?></td> 
-                                                    <td style="background-color:#0d6efd;color:#FFF;text-align:center;font-size:13px"><a href="editLicense.php?id_license=<?=$listLicense['id_license'];?>"  class="btn btn-sm btn-primary">Editar</a></td>
+                                                    <td style="background-color:#0d6efd;color:#FFF;text-align:center;font-size:13px">
+                                                        <a href="editLicense.php?id_license=<?=$listLicense['id_license'];?>"  class="btn btn-sm btn-primary">Editar</a>
+                                                        <a href="detailsLicense.php?id_license=<?=$listLicense['id_license'];?>"  class="btn btn-sm btn-primary" title="ver detalhes">+</a>
+                                                    </td>
                                             </tr>
                                                 <?php
                                         }
