@@ -11,6 +11,9 @@
                         <a class="nav-link" href="index.php">INÍCIO</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="listCompany.php">EMPRESAS</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="listLicense.php">LICENÇAS</a>
                     </li>
                     <li class="nav-item">

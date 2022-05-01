@@ -31,10 +31,11 @@
                                 <tr>
                                     <th>EMPRESA</th>
                                     <th>LICENÇA</th>
-                                    <th>DATA DE VALIDADE</th>
+                                    <th>VALIDADE</th>
                                     <th>ATIVIDADE</th>
                                     <th>STATUS</th>
                                     <th>DIAS</th>
+                                    <th>AÇÃO</th>
                                 </tr>
                             </thead>
                             <?php
@@ -57,7 +58,6 @@
 
                                 //variavel para calcular o início da visualização com base na página atual 
                                 $startVisualization = ($items * $page) - $items;
-
 
                                 $listLicenses = [];
                                 if(!isset($_POST['search'])){
@@ -90,8 +90,10 @@
                                                         <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
                                                     <?php }?>
                                                     <td style="background-color:#E6E6E6;color:#111;text-align:center;font-size:13px" class="dark"><?= $days?></td> 
+                                                    <td style="background-color:#0d6efd;color:#FFF;text-align:center;font-size:13px"><a href="editLicense.php?id_license=<?=$listLicense['id_license'];?>"  class="btn btn-sm btn-primary">Editar</a></td>
                                             </tr>
                                                 <?php 
+                                               
                                         }
                                     }
 
@@ -129,6 +131,7 @@
                                                         <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
                                                     <?php }?>
                                                     <td style="background-color:#E6E6E6;color:#111;text-align:center;font-size:13px" class="dark"><?= $days?></td> 
+                                                    <td style="background-color:#0d6efd;color:#FFF;text-align:center;font-size:13px"><a href="editLicense.php?id_license=<?=$listLicense['id_license'];?>"  class="btn btn-sm btn-primary">Editar</a></td>
                                             </tr>
                                                 <?php
                                         }
