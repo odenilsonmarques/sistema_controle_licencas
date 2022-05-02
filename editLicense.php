@@ -14,7 +14,7 @@
         <?php
             require_once 'config/connection.php';
             $datas = [];  //array para armazenar as informaçoes do usuario caso o id seja encontrado
-            $id = filter_input(INPUT_GET, 'id_license');//recebendo o id_company, caso nada ou um valor diferente for recebido(ou seja passado na url)é exibio um form vazio
+            $id = filter_input(INPUT_GET, 'id_license');//recebendo o id_license, caso nada ou um valor diferente for recebido(ou seja passado na url)é exibio um form vazio
             if($id){
                 $searchIdLicense = $connectionPDO->prepare("SELECT * FROM license WHERE id_license = :id_license");
                 $searchIdLicense->bindValue(':id_license', $id);

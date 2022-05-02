@@ -46,8 +46,7 @@ include_once 'config/connection.php';
                                     <option value="">SELECIONE</option>                                         
                                     <option value="AUTORIZAÇÃO PARA CORTE DE ARVORE">AUTORIZAÇÃO PARA CORTE DE ARVORE</option> 
                                     <option value="AUTORIZAÇÃO PARA PODA DE ÁRVORE">AUTORIZAÇÃO PARA PODA DE ÁRVORE</option> 
-                                    <option value="AUTORIZAÇÃO DE LIMPEZA DE ÁREA">AUTORIZAÇÃO DE LIMPEZA DE ÁREA</option>                                                   
-                                    <option value="AUTORIZAÇÃO PARA SUPRESSÃO DE VEGETAÇÃO E LIMPEZA DE ÁREA">AUTORIZAÇÃO PARA SUPRESSÃO DE VEGETAÇÃO E LIMPEZA DE ÁREA</option>                                                  
+                                    <option value="AUTORIZAÇÃO DE LIMPEZA DE ÁREA">AUTORIZAÇÃO DE LIMPEZA DE ÁREA</option>                                                                                                    
                                     <option value="LICENÇA CORPO DE BOMBEIRO">CORPO DE BOMBEIRO</option>
                                     <option value="LICENCA AMBIENTAL SIMPLIFICADA">L.A.S</option>
                                     <option value="LICENÇA DE INSTALAÇÃO">L.I</option>

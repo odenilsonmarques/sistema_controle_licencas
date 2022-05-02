@@ -53,3 +53,29 @@ label{
     background-color: #064635;
     color: #fff;
 }
+
+.format-text p{
+    font-size: 17px;
+}
+
+.status-licenca-dentro-do-prazo{
+    padding:5px;
+    color: #FFF;
+    background-color: #198754;
+    font-weight: bolder;
+    font-size: 15px;
+}
+.status-licenca-atencao-prazo{
+    padding:5px;
+    color: #000;
+    background-color: #ffc107;
+    font-weight: bolder;
+    font-size: 15px;
+}
+.status-licenca-prazo-vencido{
+    padding:5px;
+    color: #FFF;
+    background-color: #dc3545;
+    font-weight: bolder;
+    font-size: 15px;
+}

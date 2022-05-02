@@ -1,8 +1,8 @@
 <?php
     include_once 'config/connection.php';
 
-    $nameCompany = filter_input(INPUT_POST,'nameCompany');
-    $nameRepresentative = filter_input(INPUT_POST,'nameRepresentative');
+    $nameCompany = (strtoupper(filter_input(INPUT_POST,'nameCompany')));
+    $nameRepresentative = (strtoupper(filter_input(INPUT_POST,'nameRepresentative')));
 
     if($nameCompany){
         $insertCompany = $connectionPDO->prepare("INSERT INTO company (nameCompany, nameRepresentative) VALUES (:nameCompany, :nameRepresentative)");
