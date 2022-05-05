@@ -47,7 +47,8 @@
                                 $searchRegister->execute();
                                 $qtdRows = $searchRegister->fetch(PDO::FETCH_ASSOC); 
                                 $guardRows = $qtdRows['registers'];
-            
+
+                            
                                 // echo $rows['registers'];
 
                                 //definindo a quantidade de itens por página, neste caso
@@ -120,6 +121,31 @@
                                                     $typeLicense = $listLicense['type_license'];
                                                     $days=ceil(($expirationDate-time())/60/60/24);
 
+                                                    
+                                                    for($i=$days;$i<=$days;$i++)
+                                                    {
+                                                        if($i > 0){
+
+                                                            $cont [] = $i;
+                                                            echo'Resultado ' .count($cont)."<br/>";
+
+                                                        }
+                                                        
+                                                        
+                                                    }
+
+
+
+
+
+                            
+
+
+                                                    
+
+
+
+
                                                     if($days >= 30 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
                                                     <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
                                                     <?php }elseif($days > 1 && $days <= 30  && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
@@ -140,6 +166,8 @@
                                                     </td>
                                             </tr>
                                                 <?php
+                                                   
+
                                         }
                                          
                                     }else{ ?>
@@ -155,15 +183,15 @@
                         <nav aria-label="Page navigation" class="mt-3">
                             <ul class="pagination justify-content-center">
                                 <li class="page-item">
-                                    <a class="page-link" href="listLicense.php?page=1" tabindex="-1" aria-disabled="true">
+                                    <a class="page-link" href="qtd.php?page=1" tabindex="-1" aria-disabled="true">
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
                                 </li>
                                 <?php  for ($i = 1; $i < $numberPages + 1; $i++) {?>
-                                    <li class="page-item"><a class="page-link" href="listLicense.php?page=<?php echo $i; ?>"><?php echo $i;?></a></li>
+                                    <li class="page-item"><a class="page-link" href="qtd.php?page=<?php echo $i; ?>"><?php echo $i;?></a></li>
                                     <?php } ?>
                                 <li class="page-item">
-                                    <a class="page-link" href="listLicense.php?page=<?php echo $numberPages ;?>">
+                                    <a class="page-link" href="qtd.php?page=<?php echo $numberPages ;?>">
                                         <span aria-hidden="true">&raquo;</span>
                                     </a>
                                 </li>

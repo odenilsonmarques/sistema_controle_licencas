@@ -79,3 +79,14 @@ label{
     font-weight: bolder;
     font-size: 15px;
 }
+td{
+    font-size:14px;
+}
+
+
+
+.sideLeft{
+    border:2px solid red;
+    text-align: center;
+    padding:30px;
+}
