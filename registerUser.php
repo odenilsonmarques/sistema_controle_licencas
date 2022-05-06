@@ -18,7 +18,7 @@ include_once 'config/connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Cadastro empresa</title>
+    <title>Cadastro de Usuário</title>
 </head>
 <body>
     <?php include_once 'header.php'?>
@@ -26,16 +26,20 @@ include_once 'config/connection.php';
         <div class="container">
             <div class="row">
                 <div class="col-12-lg">
-                    <h3  class="mt-5">Cadastro de Empresa</h3>
-                    <form action="receiveCompany.php" method="POST">
+                    <h3  class="mt-5">Cadastro de Usuário</h3>
+                    <form action="receiveUser.php" method="POST">
                         <div class="row mt-4 mb-4">
-                            <div class="col-lg-6">
-                                <label for="nameCompany" class="form-label mt-3">Nome da Empresa</label>
-                                <input type="text" name="nameCompany" id="nameCompany" class="form-control" maxlength="100"  required autofocus>  
+                            <div class="col-lg-4">
+                                <label for="name" class="form-label">Nome</label>
+                                <input type="text" name="name" id="name" class="form-control" maxlength="100"  required autofocus>  
                             </div>
-                            <div class="col-lg-6">
-                                <label for="nameRepresentative" class="form-label mt-3">Nome do Representante</label>
-                                <input type="text" name="nameRepresentative" id="nameRepresentative" class="form-control" maxlength="100"  required >  
+                            <div class="col-lg-4">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" maxlength="100"  required>  
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="password" class="form-label">Senha</label>
+                                <input type="password" name="password" class="form-control" maxlength="100"  required>  
                             </div>
                         </div>
                         </div class="row">

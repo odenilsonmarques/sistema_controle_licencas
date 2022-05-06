@@ -5,7 +5,7 @@
     if(isset($_POST['email']) && empty($_POST['email']) == false){
         if(isset($_POST['password']) && empty($_POST['password']) == false){
             $email = addslashes($_POST['email']);
-            $password = addslashes($_POST['password']);
+            $password = md5(addslashes($_POST['password']));
     
             $searchUser = $connectionPDO->query("SELECT * FROM user WHERE email = '$email' AND password = '$password'");
             $searchUser->execute();
@@ -16,9 +16,10 @@
 
                 //salvando o ID do usuario na sessao
                 $_SESSION['id_user'] = $salveUser['id_user'];
+                $_SESSION['name'] = $salveUser['name'];
                 $_SESSION['email'] = $salveUser['email'];
                 $_SESSION['password'] = $salveUser['password'];
-                header("Location:validateAcess.php");
+                header("Location:index.php");
                 exit();
             }else{
                 $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'  style='color:#111'>E-mail e / ou Senha Incorretos!</div>";

@@ -1,3 +1,15 @@
+<?php
+//declarando a funcao session para capturar so dados do usuario que tentar acessar essa pagina e verificar se tem akgum dado salvo que corresponde a esse usuario
+session_start();
+if(isset($_SESSION['email']) && empty($_SESSION['email']) == false){
+    if(isset($_SESSION['password']) && empty($_SESSION['password'])== false){
+    }
+}else{
+    //caso o usuario não esteja logado(ou seja, caso não tenha uma sessão ativa) este usuario deverá ser direcionado para pagina de login
+    header("Location: login.php");
+}
+include_once 'config/connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +24,6 @@
     <?php include_once 'header.php'?>
     <section>
         <?php
-            require_once 'config/connection.php';
             $datas = [];  //array para armazenar as informaçoes do usuario caso o id seja encontrado
             $id = filter_input(INPUT_GET, 'id_license');//recebendo o id_license, caso nada ou um valor diferente for recebido(ou seja passado na url)é exibio um form vazio
             if($id){
