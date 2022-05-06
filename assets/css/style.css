@@ -83,10 +83,28 @@ td{
     font-size:14px;
 }
 
-
-
-.sideLeft{
-    border:2px solid red;
+h3.textWelcome{
+    
     text-align: center;
-    padding:30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    
+}
+
+p.textDetails{
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 17px;
+    
+}
+
+.corBackground{
+    background-color: #F8F8FF;
+    padding:40px;
+}
+
+.form-control{
+    border:none;
+    background-color:#DCDCDC ;
 }

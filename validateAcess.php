@@ -3,7 +3,7 @@
     session_start();
 
     if(isset($_SESSION['email']) && empty($_SESSION['email']) == false){
-        if(isset($password['password']) && empty($password['password'])== false){
+        if(isset($_SESSION['password']) && empty($_SESSION['password'])== false){
            
         }
     }else{
