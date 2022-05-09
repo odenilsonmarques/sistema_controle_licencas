@@ -33,7 +33,7 @@ include_once 'config/connection.php';
                         if($searchLicensesCompanys->rowCount() > 0){
                             $listLicenses = $searchLicensesCompanys->fetch(PDO::FETCH_ASSOC);?>
                             <div class="row format-text">
-                                <h2 class="text-left mt-5 mb-4">Dados da Licença</h2>
+                                <h2 class="text-left mt-5 mb-4">DADOS DA LICENÇA</h2>
                                 <div class="col-lg-4">
                                     <p><strong>PESSOA JURÍDICA / FÍSICA</strong><br><?=$listLicenses['nameCompany'];?></p>
                                     <p><strong>NOME DO REPRESENTANTE</strong><br><?=$listLicenses['nameRepresentative'];?></p>

@@ -24,9 +24,9 @@ include_once 'config/connection.php';
     <?php include_once 'header.php'?>
     <section>
         <div class="container">
-            <div class="row">
+            <div class="row  format-text">
                 <div class="col-12-lg">
-                    <h3  class="mt-5">Cadastro de Empresa</h3>
+                    <h2  class="mt-5">CADASTRO DE EMPRESA</h2>
                     <form action="receiveCompany.php" method="POST">
                         <div class="row mt-4 mb-4">
                             <div class="col-lg-6">

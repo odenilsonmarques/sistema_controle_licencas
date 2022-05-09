@@ -37,8 +37,8 @@ include_once 'config/connection.php';
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><?php echo 'Olá ' .$_SESSION['name'] ?></a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="logout.php" ><?php echo $_SESSION['email'] ?></a></li>
-                            <li><a class="dropdown-item" href="logout.php" >SAIR</a></li>
+                            <li><a class="dropdown-item" href="#" ><?php echo $_SESSION['email'] ?></a></li>
+                            <li><a class="dropdown-item" href="logout.php" >Sair</a></li>
                         </ul>
                     </li>
                 </ul>

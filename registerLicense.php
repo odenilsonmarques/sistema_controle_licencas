@@ -24,9 +24,9 @@ include_once 'config/connection.php';
     <?php include_once 'header.php'?>
     <section>
         <div class="container">
-            <div class="row">
+            <div class="row  format-text">
                 <div class="col-lg-12">
-                    <h3  class="mt-5">Cadastro de Licença</h3>
+                    <h2  class="mt-5">CADASTRO DE LICENÇA</h2>
                     <form action="receiveLicense.php" method="POST">
                         <div class="row mt-4 mb-3">
                             <div class="col-12-lg">

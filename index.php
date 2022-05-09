@@ -26,9 +26,9 @@ include_once 'config/connection.php';
     <section>
         <div class="container">
             <div class="row mt-5">
-                <div class="col-lg-6 text-center">
+                <div class="col-lg-4 text-center">
                     <div class="card text-white mb-3">
-                        <div class="card-header"><strong>EMPRESAS</strong></div>
+                        <div class="card-header"><strong>TOTAL DE EMPRESAS</strong></div>
                         <div class="card-body">
                             <?php
                                 $seachCompanys = $connectionPDO->prepare("SELECT COUNT(id_company) as registers FROM company");
@@ -40,9 +40,9 @@ include_once 'config/connection.php';
                     </div>
                 </div>
 
-                <div class="col-lg-6 text-center">
+                <div class="col-lg-4 text-center">
                     <div class="card text-white mb-3">
-                        <div class="card-header"><strong>LICENÇAS</strong></div>
+                        <div class="card-header"><strong>TOTAL DE LICENÇAS</strong></div>
                         <div class="card-body">
                             <?php
                                 $seachCompanys = $connectionPDO->prepare("SELECT COUNT(id_license) as registers FROM license");
@@ -50,6 +50,23 @@ include_once 'config/connection.php';
                                 $rows = $seachCompanys->fetch(PDO::FETCH_ASSOC); 
                             ?>
                                 <p><?php echo $rows['registers'];?></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 text-center">
+                    <div class="card text-white mb-3">
+                        <div class="card-header"><strong>LICENCAS VENCENDO HOJE</strong></div>
+                        <div class="card-body">
+                            <?php
+                                $listLicenses = [];
+                                $searchLicensesCompanys = $connectionPDO->query("SELECT * FROM license WHERE CURRENT_DATE() = expiration_date");
+                                if($searchLicensesCompanys->rowCount() > 0){
+                                    $listLicenses = $searchLicensesCompanys->fetchAll(PDO::FETCH_ASSOC);
+                                ?>
+                                    <p><?= count($listLicenses)?></p>
+                              <?php  }                                
+                            ?> 
                         </div>
                     </div>
                 </div>

@@ -83,10 +83,10 @@ include_once 'config/connection.php';
                                                 <td><?=$listLicense['activity'];?></td>
                                                 <?php
                                                     //capturando os dias de validade das licenças                                          
-                                                    $expirationDate= strtotime($listLicense['expiration_date']);
+                                                    $expirationDate = strtotime($listLicense['expiration_date'])."<br><br>";
                                                     $typeLicense = $listLicense['type_license'];
                                                     $days=ceil(($expirationDate-time())/60/60/24);
-                                                    
+    
                                                     if($days >= 30 && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
                                                     <td style="background-color:#198754;color:#FFF;text-align:center;font-size:13px"><strong>DENTRO DO PRAZO</strong></td>
                                                     <?php }elseif($days > 1 && $days <= 30  && $listLicense['type_license'] == 'LICENÇA CORPO DE BOMBEIRO'){?>
@@ -107,8 +107,12 @@ include_once 'config/connection.php';
                                                     </td>
                                             </tr>
                                                 <?php 
+                                                
                                                
                                         }
+                                        
+                                        
+
                                     }
 
                                 }else if(isset($_POST['search'])){
