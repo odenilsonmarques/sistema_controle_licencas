@@ -48,6 +48,8 @@ body
 footer p{
     color: #064635;
     font-weight:bolder;
+    margin-top: 80px;
+
 }
 label{
     font-size:16px;
@@ -91,11 +93,13 @@ td{
     font-size:13px;
 }
 
-h3.textWelcome{
+h3.textLogoStory{
     
     text-align: center;
     letter-spacing: 2px;
     font-weight: bold;
+    color: #FFFFFF;
+    font-size: 35px;
     
 }
 
@@ -103,16 +107,52 @@ p.textDetails{
     text-align: center;
     letter-spacing: 2px;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 19px;
+    color: #FFFFFF;
+    
+}
+p.textDetails2{
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
     
 }
 
 .corBackground{
     background-color: #F8F8FF;
-    padding:40px;
+    /* padding:40px; */
 }
 
 .form-floating .form-control{
     border:none;
-    background-color:#DCDCDC ;
+    /* background-color:#DCDCDC ; */
+    border-bottom: 1px solid #A9A9A9;
+}
+
+.form-floating label{
+    /* background-color:#DCDCDC ; */
+    color: #064635;
+}
+
+.login{
+    /* border:1px solid #dee2e6; */
+    /* height:100px; */
+    /* margin-top: 20%; */  
+}
+.text{
+    background-color:#064635;
+    border-radius: 5px;
+
+}
+.btn-light{
+    background-color: #064635;
+    color:#fff;
+}
+.btn-light:hover
+{
+    background-color: #F0BB62;
+    color:#064635;
+    font-weight: bolder;
 }

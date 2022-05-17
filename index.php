@@ -60,12 +60,15 @@ include_once 'config/connection.php';
                         <div class="card-body">
                             <?php
                                 $listLicenses = [];
+                                $valeuFixed = 0;
                                 $searchLicensesCompanys = $connectionPDO->query("SELECT * FROM license WHERE CURRENT_DATE() = expiration_date");
                                 if($searchLicensesCompanys->rowCount() > 0){
                                     $listLicenses = $searchLicensesCompanys->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                                     <p><?= count($listLicenses)?></p>
-                              <?php  }                                
+                              <?php } else{ ?>
+                                    <p><?= $valeuFixed ?></p>
+                             <?php }                               
                             ?> 
                         </div>
                     </div>

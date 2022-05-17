@@ -67,13 +67,12 @@ include_once 'config/connection.php';
                         </div>
                         <div class="row mb-3">
                             <div class="col-lg-3">
-                                <label for="nameRepresentative" class="form-label mt-4">Licença</label>
+                                <label for="nameRepresentative" class="form-label mt-4">Licença </label>
                                 <select name="type_license" id="type_license" class="form-select" required>
                                     <option value="">SELECIONE</option>                                         
                                     <option value="AUTORIZAÇÃO PARA CORTE DE ARVORE">AUTORIZAÇÃO PARA CORTE DE ARVORE</option> 
                                     <option value="AUTORIZAÇÃO PARA PODA DE ÁRVORE">AUTORIZAÇÃO PARA PODA DE ÁRVORE</option> 
-                                    <option value="AUTORIZAÇÃO DE LIMPEZA DE ÁREA">AUTORIZAÇÃO DE LIMPEZA DE ÁREA</option>                                                   
-                                    <option value="AUTORIZAÇÃO PARA SUPRESSÃO DE VEGETAÇÃO E LIMPEZA DE ÁREA">AUTORIZAÇÃO PARA SUPRESSÃO DE VEGETAÇÃO E LIMPEZA DE ÁREA</option>                                                  
+                                    <option value="AUTORIZAÇÃO DE LIMPEZA DE ÁREA">AUTORIZAÇÃO DE LIMPEZA DE ÁREA</option>                                                                                      
                                     <option value="LICENÇA CORPO DE BOMBEIRO">CORPO DE BOMBEIRO</option>
                                     <option value="LICENCA AMBIENTAL SIMPLIFICADA">L.A.S</option>
                                     <option value="LICENÇA DE INSTALAÇÃO">L.I</option>
