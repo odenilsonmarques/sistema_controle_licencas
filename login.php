@@ -22,7 +22,7 @@
                 header("Location:index.php");
                 exit();
             }else{
-                $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'  style='color:#111'>E-mail e / ou Senha Incorretos!</div>";
+                $_SESSION['msg'] = "<div class='alert alert-danger' role='alert' style='color:#111'>E-MAIL E / OU SENHA INCORRETOS !</div>";
             }
         }
     }
@@ -41,7 +41,7 @@
     <section>
         <div class="container">
             <div class="row login mt-5 text-center">
-                <div class="col-md-8 offset-md-2">
+                <div class="col-md-4 offset-md-4">
                     <?php
                         if (isset($_SESSION['msg'])) {
                             echo ($_SESSION['msg']);
@@ -54,11 +54,11 @@
                 <div class="col-lg-4 mt-5">
                     <form action="" method="POST">
                         <div class="form-floating mb-3">
-                            <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
                             <label for="floatingInput">Email</label>
                         </div>
                         <div class="form-floating">
-                            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required>
                             <label for="floatingPassword">Senha</label>
                         </div>
                         <input type="submit" value="Entrar" class="btn btn-light mt-4">
